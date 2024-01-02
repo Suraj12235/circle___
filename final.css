@@ -1,0 +1,72 @@
+/* Set up the overall styling for the webpage body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Create a container with specific styling */
+#container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+/* Style the circular element within the container */
+#circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid black;
+    transform-origin: center;
+}
+
+/* Create lines within the container */
+#lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 50%;
+    overflow: hidden;
+}
+
+/* Style the lines using pseudo-elements */
+#lines::before,
+#lines::after,
+#lines2::after,
+#lines2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    top: 50%;
+    left: 0;
+}
+
+/* Rotate one set of lines to create a cross shape */
+#lines::after {
+    height: 2px;
+    transform: rotate(90deg);
+}
+
+/* Rotate another set of lines to create a diagonal cross shape */
+#lines2::after {
+    transform: rotate(-45deg);
+}
+
+#lines2::before {
+    transform: rotate(45deg);
+}
+
+/* Style the button with a margin */
+button {
+    margin-left: 15px;
+}
